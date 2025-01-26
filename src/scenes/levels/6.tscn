@@ -1,25 +1,25 @@
-[gd_scene load_steps=12 format=3 uid="uid://0exymxs275rt"]
+[gd_scene load_steps=12 format=3 uid="uid://cy5t0twj4m6uk"]
 
-[ext_resource type="Script" path="res://src/Scripts/level_template.gd" id="1_rvsnd"]
-[ext_resource type="Texture2D" uid="uid://dv3vbigmnq26g" path="res://assets/oceanbackground.jpg" id="2_gbfyk"]
-[ext_resource type="PackedScene" uid="uid://cycunt3b4mv6w" path="res://src/scenes/grid.tscn" id="3_k781y"]
-[ext_resource type="Script" path="res://src/Scripts/button_container.gd" id="4_dmnt2"]
-[ext_resource type="Theme" uid="uid://mt7ddgnm65ct" path="res://assets/Themes/game_buttons_theme.tres" id="5_06sgr"]
-[ext_resource type="Script" path="res://src/Scripts/button.gd" id="6_y6p44"]
-[ext_resource type="Texture2D" uid="uid://61o3wl3d2uki" path="res://assets/rotate.png" id="7_bpmh7"]
-[ext_resource type="Texture2D" uid="uid://dlkv17ywelsb8" path="res://assets/flip.png" id="8_itg8x"]
-[ext_resource type="Texture2D" uid="uid://7yrw2ol2ty1d" path="res://assets/arrow.png" id="9_cbkim"]
-[ext_resource type="Script" path="res://src/Scripts/scene_switch_button.gd" id="10_fw3on"]
-[ext_resource type="PackedScene" uid="uid://hmtdx7d7sg8e" path="res://src/scenes/rising_bubbles.tscn" id="11_vhqeh"]
+[ext_resource type="Script" path="res://src/Scripts/level_template.gd" id="1_kfpvm"]
+[ext_resource type="Texture2D" uid="uid://dv3vbigmnq26g" path="res://assets/oceanbackground.jpg" id="2_5i145"]
+[ext_resource type="PackedScene" uid="uid://cycunt3b4mv6w" path="res://src/scenes/grid.tscn" id="3_wgncn"]
+[ext_resource type="Script" path="res://src/Scripts/button_container.gd" id="4_2e427"]
+[ext_resource type="Theme" uid="uid://mt7ddgnm65ct" path="res://assets/Themes/game_buttons_theme.tres" id="5_jbaao"]
+[ext_resource type="Script" path="res://src/Scripts/button.gd" id="6_qfipd"]
+[ext_resource type="Texture2D" uid="uid://61o3wl3d2uki" path="res://assets/rotate.png" id="7_8eyfq"]
+[ext_resource type="Texture2D" uid="uid://dlkv17ywelsb8" path="res://assets/flip.png" id="8_qld5w"]
+[ext_resource type="Texture2D" uid="uid://7yrw2ol2ty1d" path="res://assets/arrow.png" id="9_dq7jk"]
+[ext_resource type="Script" path="res://src/Scripts/scene_switch_button.gd" id="10_a33c7"]
+[ext_resource type="PackedScene" uid="uid://hmtdx7d7sg8e" path="res://src/scenes/rising_bubbles.tscn" id="11_q75ou"]
 
 [node name="LevelTemplate" type="Node2D"]
-script = ExtResource("1_rvsnd")
-level_number = 0
+script = ExtResource("1_kfpvm")
+level_number = 5
 
 [node name="Oceanbackground" type="Sprite2D" parent="."]
 z_index = -10
 position = Vector2(484, 479)
-texture = ExtResource("2_gbfyk")
+texture = ExtResource("2_5i145")
 
 [node name="Text" type="Control" parent="."]
 layout_mode = 3
@@ -35,7 +35,7 @@ offset_right = 573.0
 offset_bottom = 157.0
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 64
-text = "Level 1
+text = "Level 6
 "
 fit_content = true
 scroll_active = false
@@ -66,12 +66,11 @@ text = "Bubbles
 fit_content = true
 scroll_active = false
 
-[node name="GridScene" parent="." instance=ExtResource("3_k781y")]
-INIT_BUBBLE_POSITIONS = Array[Vector2i]([Vector2i(2, 1)])
-INIT_BLOCK_POSITIONS = Array[Vector2i]([Vector2i(2, 0), Vector2i(1, 1), Vector2i(0, 2), Vector2i(3, 1), Vector2i(3, 2), Vector2i(2, 3)])
-INIT_SPIKE_POSITIONS = Array[Vector2i]([])
-num_moves = 3
-GRID_SIZE = 4
+[node name="GridScene" parent="." instance=ExtResource("3_wgncn")]
+INIT_BUBBLE_POSITIONS = Array[Vector2i]([Vector2i(5, 0), Vector2i(3, 5), Vector2i(0, 0), Vector2i(0, 5)])
+INIT_BLOCK_POSITIONS = Array[Vector2i]([Vector2i(6, 0), Vector2i(5, 1), Vector2i(4, 0), Vector2i(3, 1), Vector2i(5, 5), Vector2i(2, 5)])
+INIT_SPIKE_POSITIONS = Array[Vector2i]([Vector2i(0, 6), Vector2i(0, 1), Vector2i(4, 6)])
+num_moves = 4
 
 [node name="BubbleCounter" type="Label" parent="GridScene"]
 layout_mode = 0
@@ -97,39 +96,39 @@ offset_left = 287.0
 offset_top = 754.0
 offset_right = 407.0
 offset_bottom = 850.0
-script = ExtResource("4_dmnt2")
+script = ExtResource("4_2e427")
 
 [node name="LeftButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("5_06sgr")
+theme = ExtResource("5_jbaao")
 icon_alignment = 1
-script = ExtResource("6_y6p44")
+script = ExtResource("6_qfipd")
 
 [node name="Sprite" type="Sprite2D" parent="HBoxContainer/LeftButton"]
 rotation = -0.989602
-texture = ExtResource("7_bpmh7")
+texture = ExtResource("7_8eyfq")
 
 [node name="CenterButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("5_06sgr")
+theme = ExtResource("5_jbaao")
 icon_alignment = 1
-script = ExtResource("6_y6p44")
+script = ExtResource("6_qfipd")
 
 [node name="Sprite" type="Sprite2D" parent="HBoxContainer/CenterButton"]
 rotation = -5.44892
-texture = ExtResource("8_itg8x")
+texture = ExtResource("8_qld5w")
 
 [node name="RightButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("5_06sgr")
-script = ExtResource("6_y6p44")
+theme = ExtResource("5_jbaao")
+script = ExtResource("6_qfipd")
 
 [node name="Sprite" type="Sprite2D" parent="HBoxContainer/RightButton"]
 rotation = 0.989602
-texture = ExtResource("7_bpmh7")
+texture = ExtResource("7_8eyfq")
 flip_h = true
 
 [node name="MenuButton" type="Button" parent="."]
@@ -137,11 +136,11 @@ offset_left = 58.0
 offset_top = 65.0
 offset_right = 138.0
 offset_bottom = 145.0
-theme = ExtResource("5_06sgr")
-icon = ExtResource("9_cbkim")
-script = ExtResource("10_fw3on")
+theme = ExtResource("5_jbaao")
+icon = ExtResource("9_dq7jk")
+script = ExtResource("10_a33c7")
 scene_switch = "res://src/scenes/menu_ui.tscn"
 
-[node name="RisingBubbles" parent="." instance=ExtResource("11_vhqeh")]
+[node name="RisingBubbles" parent="." instance=ExtResource("11_q75ou")]
 
 [connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]

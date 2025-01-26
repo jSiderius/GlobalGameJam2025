@@ -1,6 +1,6 @@
 extends Node
 
-var num_levels = 20
+var num_levels = 10
 var active_level = 0
 var level_completed_bools = []
 var level_paths = []

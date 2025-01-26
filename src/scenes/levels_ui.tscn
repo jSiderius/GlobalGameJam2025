@@ -68,6 +68,7 @@ theme = ExtResource("2_35lhk")
 theme_override_font_sizes/font_size = 30
 text = "3"
 script = ExtResource("4_0dpri")
+scene_switch = "res://src/scenes/levels/3.tscn"
 
 [node name="Level4" type="Button" parent="GridContainer"]
 custom_minimum_size = Vector2(64, 64)
@@ -76,6 +77,7 @@ theme = ExtResource("2_35lhk")
 theme_override_font_sizes/font_size = 30
 text = "4"
 script = ExtResource("4_0dpri")
+scene_switch = "res://src/scenes/levels/4.tscn"
 
 [node name="Level5" type="Button" parent="GridContainer"]
 custom_minimum_size = Vector2(64, 64)
@@ -84,6 +86,7 @@ theme = ExtResource("2_35lhk")
 theme_override_font_sizes/font_size = 30
 text = "5"
 script = ExtResource("4_0dpri")
+scene_switch = "res://src/scenes/levels/5.tscn"
 
 [node name="Level6" type="Button" parent="GridContainer"]
 custom_minimum_size = Vector2(64, 64)
@@ -91,6 +94,8 @@ layout_mode = 2
 theme = ExtResource("2_35lhk")
 theme_override_font_sizes/font_size = 30
 text = "6"
+script = ExtResource("4_0dpri")
+scene_switch = "res://src/scenes/levels/6.tscn"
 
 [node name="Level7" type="Button" parent="GridContainer"]
 custom_minimum_size = Vector2(64, 64)
@@ -98,20 +103,28 @@ layout_mode = 2
 theme = ExtResource("2_35lhk")
 theme_override_font_sizes/font_size = 30
 text = "7"
+script = ExtResource("4_0dpri")
+scene_switch = "res://src/scenes/levels/7.tscn"
 
 [node name="Level8" type="Button" parent="GridContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 theme = ExtResource("2_35lhk")
 theme_override_font_sizes/font_size = 30
-text = "8"
+text = "8
+"
+script = ExtResource("4_0dpri")
+scene_switch = "res://src/scenes/levels/8.tscn"
 
 [node name="Level9" type="Button" parent="GridContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 theme = ExtResource("2_35lhk")
 theme_override_font_sizes/font_size = 30
-text = "9"
+text = "9
+"
+script = ExtResource("4_0dpri")
+scene_switch = "res://src/scenes/levels/9.tscn"
 
 [node name="Level10" type="Button" parent="GridContainer"]
 custom_minimum_size = Vector2(64, 64)
@@ -119,76 +132,8 @@ layout_mode = 2
 theme = ExtResource("2_35lhk")
 theme_override_font_sizes/font_size = 30
 text = "10"
-
-[node name="Level11" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-theme = ExtResource("2_35lhk")
-theme_override_font_sizes/font_size = 30
-text = "11"
-
-[node name="Level12" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-theme = ExtResource("2_35lhk")
-theme_override_font_sizes/font_size = 30
-text = "12"
-
-[node name="Level13" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-theme = ExtResource("2_35lhk")
-theme_override_font_sizes/font_size = 30
-text = "13"
-
-[node name="Level14" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-theme = ExtResource("2_35lhk")
-theme_override_font_sizes/font_size = 30
-text = "14"
-
-[node name="Level15" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-theme = ExtResource("2_35lhk")
-theme_override_font_sizes/font_size = 30
-text = "15"
-
-[node name="Level16" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-theme = ExtResource("2_35lhk")
-theme_override_font_sizes/font_size = 30
-text = "16"
-
-[node name="Level17" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-theme = ExtResource("2_35lhk")
-theme_override_font_sizes/font_size = 30
-text = "17"
-
-[node name="Level18" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-theme = ExtResource("2_35lhk")
-theme_override_font_sizes/font_size = 30
-text = "18"
-
-[node name="Level19" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-theme = ExtResource("2_35lhk")
-theme_override_font_sizes/font_size = 30
-text = "19"
-
-[node name="Level20" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-theme = ExtResource("2_35lhk")
-theme_override_font_sizes/font_size = 30
-text = "20"
+script = ExtResource("4_0dpri")
+scene_switch = "res://src/scenes/levels/10.tscn"
 
 [node name="MenuButton" type="Button" parent="."]
 layout_mode = 0
@@ -205,4 +150,12 @@ scene_switch = "res://src/scenes/menu_ui.tscn"
 
 [connection signal="pressed" from="GridContainer/Level1" to="GridContainer/Level1" method="_on_pressed"]
 [connection signal="pressed" from="GridContainer/Level2" to="GridContainer/Level2" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Level3" to="GridContainer/Level3" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Level4" to="GridContainer/Level4" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Level5" to="GridContainer/Level5" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Level6" to="GridContainer/Level6" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Level7" to="GridContainer/Level7" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Level8" to="GridContainer/Level8" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Level9" to="GridContainer/Level9" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Level10" to="GridContainer/Level10" method="_on_pressed"]
 [connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]

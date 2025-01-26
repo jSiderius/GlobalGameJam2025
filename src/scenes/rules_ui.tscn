@@ -63,15 +63,17 @@ layout_mode = 0
 offset_left = 258.0
 offset_top = 270.0
 offset_right = 658.0
-offset_bottom = 570.0
+offset_bottom = 590.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_hgyxs")
-text = "1. Your goal is to have all the bubbles exit the grid
+text = "1. Your goal is to get all of the bubbles out of the grid
 
 2. Bubbles always go up
 
-3. Use the buttons to rotate the grid 90 degrees to the left/right or a full 180 degrees
+3. Watch out for spikes
 
-4. Get all the bubbles out in the alotted number of moves and you pass the level
+4. Use the buttons to rotate the grid 90 degrees to the left/right or a full 180 degrees
+
+5. Get all the bubbles out in the alotted number of moves and you pass the level
 "
 
 [node name="Node2D" parent="." instance=ExtResource("5_8pghu")]

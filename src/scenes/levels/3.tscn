@@ -14,6 +14,7 @@
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource("1_njqm6")
+level_number = 2
 
 [node name="Oceanbackground" type="Sprite2D" parent="."]
 z_index = -10
@@ -66,8 +67,11 @@ fit_content = true
 scroll_active = false
 
 [node name="GridScene" parent="." instance=ExtResource("3_fdsir")]
-INIT_BLOCK_POSITIONS = Array[Vector2i]([Vector2i(0, 0), Vector2i(2, 6), Vector2i(6, 5), Vector2i(6, 1), Vector2i(5, 0)])
+INIT_BUBBLE_POSITIONS = Array[Vector2i]([Vector2i(1, 1), Vector2i(1, 3)])
+INIT_BLOCK_POSITIONS = Array[Vector2i]([Vector2i(0, 1), Vector2i(0, 3), Vector2i(1, 0), Vector2i(1, 4), Vector2i(4, 1), Vector2i(4, 3)])
+INIT_SPIKE_POSITIONS = Array[Vector2i]([Vector2i(3, 1)])
 num_moves = 3
+GRID_SIZE = 5
 
 [node name="BubbleCounter" type="Label" parent="GridScene"]
 layout_mode = 0

@@ -39,17 +39,6 @@ theme = ExtResource("2_566h3")
 text = "Next Level
 "
 script = ExtResource("3_c53oi")
-scene_switch = "next_level"
-
-[node name="PlayAgainButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 302.0
-offset_top = 568.0
-offset_right = 602.0
-offset_bottom = 648.0
-theme = ExtResource("2_566h3")
-text = "Play Again"
-script = ExtResource("3_c53oi")
 scene_switch = "active_level"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -68,4 +57,3 @@ scroll_active = false
 
 [connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]
 [connection signal="pressed" from="NextLevelButton" to="NextLevelButton" method="_on_pressed"]
-[connection signal="pressed" from="PlayAgainButton" to="PlayAgainButton" method="_on_pressed"]

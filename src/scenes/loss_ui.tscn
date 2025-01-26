@@ -19,6 +19,7 @@ position = Vector2(484, 479)
 texture = ExtResource("1_04aq7")
 
 [node name="MenuButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 302.0
 offset_top = 373.0
 offset_right = 602.0
@@ -29,6 +30,7 @@ script = ExtResource("3_pmpsq")
 scene_switch = "res://src/scenes/menu_ui.tscn"
 
 [node name="PlayAgainButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 302.0
 offset_top = 469.0
 offset_right = 602.0
@@ -39,6 +41,7 @@ script = ExtResource("3_pmpsq")
 scene_switch = "active_level"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 268.0
 offset_top = 126.0
 offset_right = 768.0
