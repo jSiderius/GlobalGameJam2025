@@ -1,0 +1,144 @@
+[gd_scene load_steps=12 format=3 uid="uid://d0cqqwu320s0c"]
+
+[ext_resource type="Script" path="res://src/Scripts/level_template.gd" id="1_csdrm"]
+[ext_resource type="Texture2D" uid="uid://dv3vbigmnq26g" path="res://assets/oceanbackground.jpg" id="2_88sho"]
+[ext_resource type="PackedScene" uid="uid://cycunt3b4mv6w" path="res://src/scenes/grid.tscn" id="3_ass4f"]
+[ext_resource type="Script" path="res://src/Scripts/button_container.gd" id="4_3ib8c"]
+[ext_resource type="Theme" uid="uid://mt7ddgnm65ct" path="res://assets/Themes/game_buttons_theme.tres" id="5_s1nn4"]
+[ext_resource type="Script" path="res://src/Scripts/button.gd" id="6_svkns"]
+[ext_resource type="Texture2D" uid="uid://61o3wl3d2uki" path="res://assets/rotate.png" id="7_fgyph"]
+[ext_resource type="Texture2D" uid="uid://dlkv17ywelsb8" path="res://assets/flip.png" id="8_i53h4"]
+[ext_resource type="Texture2D" uid="uid://7yrw2ol2ty1d" path="res://assets/arrow.png" id="9_e15l8"]
+[ext_resource type="Script" path="res://src/Scripts/scene_switch_button.gd" id="10_1jbpl"]
+[ext_resource type="PackedScene" uid="uid://hmtdx7d7sg8e" path="res://src/scenes/rising_bubbles.tscn" id="11_y6uq7"]
+
+[node name="LevelTemplate" type="Node2D"]
+script = ExtResource("1_csdrm")
+level_number = 1
+
+[node name="Oceanbackground" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(484, 479)
+texture = ExtResource("2_88sho")
+
+[node name="Text" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LevelText" type="RichTextLabel" parent="Text"]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 69.0
+offset_right = 573.0
+offset_bottom = 157.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 64
+text = "Level 2
+"
+fit_content = true
+scroll_active = false
+
+[node name="MoveText" type="RichTextLabel" parent="Text"]
+layout_mode = 0
+offset_left = 725.0
+offset_top = 75.0
+offset_right = 945.0
+offset_bottom = 120.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 25
+text = "Moves
+"
+fit_content = true
+scroll_active = false
+
+[node name="BubblesText" type="RichTextLabel" parent="Text"]
+layout_mode = 0
+offset_left = 725.0
+offset_top = 121.0
+offset_right = 965.0
+offset_bottom = 166.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 25
+text = "Bubbles
+"
+fit_content = true
+scroll_active = false
+
+[node name="GridScene" parent="." instance=ExtResource("3_ass4f")]
+INIT_BLOCK_POSITIONS = Array[Vector2i]([Vector2i(0, 0), Vector2i(2, 6), Vector2i(6, 5), Vector2i(6, 1), Vector2i(5, 0)])
+num_moves = 3
+
+[node name="BubbleCounter" type="Label" parent="GridScene"]
+layout_mode = 0
+offset_left = 852.0
+offset_top = 118.0
+offset_right = 892.0
+offset_bottom = 163.0
+theme_override_font_sizes/font_size = 32
+text = "19"
+
+[node name="MoveCounter" type="Label" parent="GridScene"]
+layout_mode = 0
+offset_left = 852.0
+offset_top = 70.0
+offset_right = 892.0
+offset_bottom = 115.0
+theme_override_font_sizes/font_size = 32
+text = "19"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 287.0
+offset_top = 754.0
+offset_right = 407.0
+offset_bottom = 850.0
+script = ExtResource("4_3ib8c")
+
+[node name="LeftButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_s1nn4")
+icon_alignment = 1
+script = ExtResource("6_svkns")
+
+[node name="Sprite" type="Sprite2D" parent="HBoxContainer/LeftButton"]
+rotation = -0.989602
+texture = ExtResource("7_fgyph")
+
+[node name="CenterButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_s1nn4")
+icon_alignment = 1
+script = ExtResource("6_svkns")
+
+[node name="Sprite" type="Sprite2D" parent="HBoxContainer/CenterButton"]
+rotation = -5.44892
+texture = ExtResource("8_i53h4")
+
+[node name="RightButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_s1nn4")
+script = ExtResource("6_svkns")
+
+[node name="Sprite" type="Sprite2D" parent="HBoxContainer/RightButton"]
+rotation = 0.989602
+texture = ExtResource("7_fgyph")
+flip_h = true
+
+[node name="MenuButton" type="Button" parent="."]
+offset_left = 58.0
+offset_top = 65.0
+offset_right = 138.0
+offset_bottom = 145.0
+theme = ExtResource("5_s1nn4")
+icon = ExtResource("9_e15l8")
+script = ExtResource("10_1jbpl")
+scene_switch = "res://src/scenes/menu_ui.tscn"
+
+[node name="RisingBubbles" parent="." instance=ExtResource("11_y6uq7")]
+
+[connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]

@@ -1,0 +1,208 @@
+[gd_scene load_steps=7 format=3 uid="uid://cmumn7t34ajk3"]
+
+[ext_resource type="Texture2D" uid="uid://dv3vbigmnq26g" path="res://assets/oceanbackground.jpg" id="1_ybikx"]
+[ext_resource type="Theme" uid="uid://cgaj54vt0lrks" path="res://assets/Themes/menu_buttons_theme.tres" id="2_35lhk"]
+[ext_resource type="Theme" uid="uid://mt7ddgnm65ct" path="res://assets/Themes/game_buttons_theme.tres" id="2_dgytc"]
+[ext_resource type="Texture2D" uid="uid://7yrw2ol2ty1d" path="res://assets/arrow.png" id="3_pmsws"]
+[ext_resource type="Script" path="res://src/Scripts/scene_switch_button.gd" id="4_0dpri"]
+[ext_resource type="PackedScene" uid="uid://hmtdx7d7sg8e" path="res://src/scenes/rising_bubbles.tscn" id="6_ph7ul"]
+
+[node name="LevelUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Oceanbackground" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(484, 479)
+texture = ExtResource("1_ybikx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 125.0
+offset_right = 549.0
+offset_bottom = 213.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 64
+text = "Levels
+"
+fit_content = true
+scroll_active = false
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 374.0
+offset_right = 812.0
+offset_bottom = 522.0
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 20
+columns = 10
+
+[node name="Level1" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "1"
+script = ExtResource("4_0dpri")
+scene_switch = "res://src/scenes/levels/1.tscn"
+
+[node name="Level2" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "2"
+script = ExtResource("4_0dpri")
+scene_switch = "res://src/scenes/levels/2.tscn"
+
+[node name="Level3" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "3"
+script = ExtResource("4_0dpri")
+
+[node name="Level4" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "4"
+script = ExtResource("4_0dpri")
+
+[node name="Level5" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "5"
+script = ExtResource("4_0dpri")
+
+[node name="Level6" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "6"
+
+[node name="Level7" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "7"
+
+[node name="Level8" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "8"
+
+[node name="Level9" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "9"
+
+[node name="Level10" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "10"
+
+[node name="Level11" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "11"
+
+[node name="Level12" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "12"
+
+[node name="Level13" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "13"
+
+[node name="Level14" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "14"
+
+[node name="Level15" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "15"
+
+[node name="Level16" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "16"
+
+[node name="Level17" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "17"
+
+[node name="Level18" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "18"
+
+[node name="Level19" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "19"
+
+[node name="Level20" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("2_35lhk")
+theme_override_font_sizes/font_size = 30
+text = "20"
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 65.0
+offset_right = 138.0
+offset_bottom = 145.0
+theme = ExtResource("2_dgytc")
+icon = ExtResource("3_pmsws")
+script = ExtResource("4_0dpri")
+scene_switch = "res://src/scenes/menu_ui.tscn"
+
+[node name="Node2D" parent="." instance=ExtResource("6_ph7ul")]
+
+[connection signal="pressed" from="GridContainer/Level1" to="GridContainer/Level1" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Level2" to="GridContainer/Level2" method="_on_pressed"]
+[connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]

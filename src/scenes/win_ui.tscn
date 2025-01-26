@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://haj5la4vv8xo"]
+
+[ext_resource type="Texture2D" uid="uid://dv3vbigmnq26g" path="res://assets/oceanbackground.jpg" id="1_lkgag"]
+[ext_resource type="Theme" uid="uid://cgaj54vt0lrks" path="res://assets/Themes/menu_buttons_theme.tres" id="2_566h3"]
+[ext_resource type="Script" path="res://src/Scripts/scene_switch_button.gd" id="3_c53oi"]
+[ext_resource type="PackedScene" uid="uid://hmtdx7d7sg8e" path="res://src/scenes/rising_bubbles.tscn" id="4_fccqc"]
+
+[node name="MenuUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Oceanbackground" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(484, 479)
+texture = ExtResource("1_lkgag")
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 373.0
+offset_right = 602.0
+offset_bottom = 453.0
+theme = ExtResource("2_566h3")
+text = "Menu"
+script = ExtResource("3_c53oi")
+scene_switch = "res://src/scenes/menu_ui.tscn"
+
+[node name="NextLevelButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 470.0
+offset_right = 602.0
+offset_bottom = 550.0
+theme = ExtResource("2_566h3")
+text = "Next Level
+"
+script = ExtResource("3_c53oi")
+scene_switch = "next_level"
+
+[node name="PlayAgainButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 568.0
+offset_right = 602.0
+offset_bottom = 648.0
+theme = ExtResource("2_566h3")
+text = "Play Again"
+script = ExtResource("3_c53oi")
+scene_switch = "active_level"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 126.0
+offset_right = 719.0
+offset_bottom = 214.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 64
+text = "Level Complete!"
+fit_content = true
+scroll_active = false
+
+[node name="Node2D" parent="." instance=ExtResource("4_fccqc")]
+
+[connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]
+[connection signal="pressed" from="NextLevelButton" to="NextLevelButton" method="_on_pressed"]
+[connection signal="pressed" from="PlayAgainButton" to="PlayAgainButton" method="_on_pressed"]
