@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://5r1kk7kjmyw2"]
+[gd_scene load_steps=5 format=3 uid="uid://5r1kk7kjmyw2"]
 
 [ext_resource type="PackedScene" uid="uid://c33nqybuwn1uo" path="res://src/scenes/level editor/items/item_bubble.tscn" id="1_4ucq5"]
 [ext_resource type="PackedScene" uid="uid://i7yh16a3no5k" path="res://src/scenes/level editor/items/item_block.tscn" id="2_uodkx"]
 [ext_resource type="PackedScene" uid="uid://cfb25cva376vd" path="res://src/scenes/level editor/items/item_spike.tscn" id="3_sfxlu"]
+[ext_resource type="Script" path="res://src/scenes/level editor/main/grid_size_edit.gd" id="4_2ump6"]
 
 [node name="item_select" type="Control"]
 layout_mode = 3
@@ -64,3 +65,111 @@ layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Data" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Data"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Data/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="grid_size_label" type="RichTextLabel" parent="TabContainer/Data/VBoxContainer/HBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 16
+text = "Grid Size"
+fit_content = true
+scroll_active = false
+
+[node name="grid_size_edit" type="LineEdit" parent="TabContainer/Data/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+script = ExtResource("4_2ump6")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Data/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/Data/VBoxContainer/HBoxContainer2"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 16
+text = "*"
+fit_content = true
+scroll_active = false
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/Data/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TabContainer/Data/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/Data/VBoxContainer/HBoxContainer3"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 16
+text = "*"
+fit_content = true
+scroll_active = false
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/Data/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="TabContainer/Data/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/Data/VBoxContainer/HBoxContainer4"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 16
+text = "*"
+fit_content = true
+scroll_active = false
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/Data/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="TabContainer/Data/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/Data/VBoxContainer/HBoxContainer5"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 16
+text = "*"
+fit_content = true
+scroll_active = false
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/Data/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="text_changed" from="TabContainer/Data/VBoxContainer/HBoxContainer/grid_size_edit" to="TabContainer/Data/VBoxContainer/HBoxContainer/grid_size_edit" method="_on_text_changed"]
+[connection signal="text_submitted" from="TabContainer/Data/VBoxContainer/HBoxContainer/grid_size_edit" to="TabContainer/Data/VBoxContainer/HBoxContainer/grid_size_edit" method="_on_text_submitted"]

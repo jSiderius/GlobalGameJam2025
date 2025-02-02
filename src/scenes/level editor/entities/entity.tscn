@@ -1,44 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8qy5mmx70jpw"]
-
-[ext_resource type="Texture2D" uid="uid://5ujvqnhcklj4" path="res://assets/stone.png" id="1_efnn0"]
-[ext_resource type="Texture2D" uid="uid://b5kaemfpldwa6" path="res://assets/Bubbles/Coloured/32x32/bubble_3.png" id="2_miaff"]
-[ext_resource type="Texture2D" uid="uid://boulbekk6t1xb" path="res://assets/mine.png" id="3_ffo5m"]
+[gd_scene load_steps=2 format=3 uid="uid://c8qy5mmx70jpw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icqmr"]
-size = Vector2(31, 31)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_tw273"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_efnn0")
-}],
-"loop": true,
-"name": &"block",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_miaff")
-}],
-"loop": true,
-"name": &"bubble",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_ffo5m")
-}],
-"loop": true,
-"name": &"spike",
-"speed": 5.0
-}]
+size = Vector2(64, 64)
 
 [node name="entity" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_icqmr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_tw273")
-animation = &"block"
+[node name="Sprite2D" type="Sprite2D" parent="."]

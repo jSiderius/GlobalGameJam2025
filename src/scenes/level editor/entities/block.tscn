@@ -1,5 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsm6bl3qbodln"]
+[gd_scene load_steps=3 format=3 uid="uid://bsm6bl3qbodln"]
 
 [ext_resource type="PackedScene" uid="uid://c8qy5mmx70jpw" path="res://src/scenes/level editor/entities/entity.tscn" id="1_s1ll1"]
+[ext_resource type="Texture2D" uid="uid://5ujvqnhcklj4" path="res://assets/stone.png" id="2_kjkai"]
 
 [node name="block" instance=ExtResource("1_s1ll1")]
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(32, 32)
+scale = Vector2(0.177563, 0.177563)
+texture = ExtResource("2_kjkai")

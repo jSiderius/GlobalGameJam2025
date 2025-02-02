@@ -18,11 +18,12 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 Global="*res://src/Scripts/global.gd"
+LevelEditGlobal="*res://src/scenes/level editor/scripts/level_edit_global.gd"
 
 [display]
 
 window/size/viewport_width=900
-window/size/viewport_height=900
+window/size/viewport_height=1200
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 
