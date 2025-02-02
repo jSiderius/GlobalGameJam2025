@@ -13,3 +13,4 @@ func _item_clicked(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed: 
 		object_cursor.current_item = this_scene
 		cursor_sprite.texture = texture
+		cursor_sprite.scale = Vector2(64.0 / texture.get_width(), 64.0 / texture.get_height())

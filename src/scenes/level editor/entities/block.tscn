@@ -5,6 +5,9 @@
 
 [node name="block" instance=ExtResource("1_s1ll1")]
 
+[node name="CollisionShape2D" parent="." index="0"]
+visible = false
+
 [node name="Sprite2D" parent="." index="1"]
 position = Vector2(32, 32)
 scale = Vector2(0.177563, 0.177563)

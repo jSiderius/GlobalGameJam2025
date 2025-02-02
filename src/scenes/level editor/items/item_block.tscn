@@ -6,4 +6,5 @@
 
 [node name="item_block" instance=ExtResource("1_ketbe")]
 texture = ExtResource("2_g1p6q")
+expand_mode = 1
 this_scene = ExtResource("3_tqrb2")

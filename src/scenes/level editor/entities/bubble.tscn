@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpnhi8ou3s2uj"]
+[gd_scene load_steps=3 format=3 uid="uid://dpnhi8ou3s2uj"]
 
 [ext_resource type="PackedScene" uid="uid://c8qy5mmx70jpw" path="res://src/scenes/level editor/entities/entity.tscn" id="1_e8cll"]
+[ext_resource type="Texture2D" uid="uid://bnvkos4ixop6v" path="res://assets/Bubbles/Coloured/64x64/bubble_3.png" id="2_u3yqo"]
 
 [node name="bubbles" instance=ExtResource("1_e8cll")]
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(-0.5, -0.5)
+visible = false
 
-[node name="AnimatedSprite2D" parent="." index="1"]
-animation = &"bubble"
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(32, 32)
+texture = ExtResource("2_u3yqo")
