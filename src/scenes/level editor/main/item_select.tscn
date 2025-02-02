@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://5r1kk7kjmyw2"]
+
+[ext_resource type="PackedScene" uid="uid://c33nqybuwn1uo" path="res://src/scenes/level editor/items/item_bubble.tscn" id="1_4ucq5"]
+[ext_resource type="PackedScene" uid="uid://i7yh16a3no5k" path="res://src/scenes/level editor/items/item_block.tscn" id="2_uodkx"]
+[ext_resource type="PackedScene" uid="uid://cfb25cva376vd" path="res://src/scenes/level editor/items/item_spike.tscn" id="3_sfxlu"]
+
+[node name="item_select" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 0
+offset_right = 345.0
+offset_bottom = 224.0
+tab_alignment = 1
+current_tab = 0
+
+[node name="Pieces" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Pieces"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Pieces/ScrollContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Pieces/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="item_bubble" parent="TabContainer/Pieces/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_4ucq5")]
+layout_mode = 2
+
+[node name="item_block" parent="TabContainer/Pieces/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_uodkx")]
+layout_mode = 2
+expand_mode = 2
+
+[node name="item_spike" parent="TabContainer/Pieces/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_sfxlu")]
+layout_mode = 2
+expand_mode = 2
+
+[node name="Controls" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controls"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/ScrollContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer"]
+layout_mode = 2

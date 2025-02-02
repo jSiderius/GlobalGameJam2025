@@ -29,9 +29,9 @@ offset_bottom = 40.0
 
 [node name="LevelText" type="RichTextLabel" parent="Text"]
 layout_mode = 0
-offset_left = 313.0
+offset_left = 353.0
 offset_top = 69.0
-offset_right = 573.0
+offset_right = 613.0
 offset_bottom = 157.0
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 64

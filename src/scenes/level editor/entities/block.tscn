@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsm6bl3qbodln"]
+
+[ext_resource type="PackedScene" uid="uid://c8qy5mmx70jpw" path="res://src/scenes/level editor/entities/entity.tscn" id="1_s1ll1"]
+
+[node name="block" instance=ExtResource("1_s1ll1")]

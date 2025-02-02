@@ -2,3 +2,7 @@
 .godot
 .godot/
 .godot/*
+builds
+builds/
+builds/*
+export_presets.cfg

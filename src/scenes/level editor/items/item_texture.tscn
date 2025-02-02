@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://buy5xm5ce78w0"]
+
+[ext_resource type="Script" path="res://src/scenes/level editor/scripts/item_texture.gd" id="1_wp4d7"]
+
+[node name="item_texture" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_wp4d7")
+
+[connection signal="gui_input" from="." to="." method="_item_clicked"]

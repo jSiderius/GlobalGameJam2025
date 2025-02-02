@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfb25cva376vd"]
+
+[ext_resource type="PackedScene" uid="uid://buy5xm5ce78w0" path="res://src/scenes/level editor/items/item_texture.tscn" id="1_iobfa"]
+[ext_resource type="Texture2D" uid="uid://boulbekk6t1xb" path="res://assets/mine.png" id="2_b6heu"]
+[ext_resource type="PackedScene" uid="uid://dn5kvx62b32rk" path="res://src/scenes/level editor/entities/spike.tscn" id="3_10nb5"]
+
+[node name="item_spike" instance=ExtResource("1_iobfa")]
+texture = ExtResource("2_b6heu")
+this_scene = ExtResource("3_10nb5")

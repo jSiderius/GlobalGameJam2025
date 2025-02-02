@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2g0c842mdyve"]
+
+[ext_resource type="Script" path="res://src/scenes/level editor/scripts/editor_object.gd" id="1_gtmtg"]
+[ext_resource type="PackedScene" uid="uid://5r1kk7kjmyw2" path="res://src/scenes/level editor/main/item_select.tscn" id="2_xyd57"]
+
+[node name="level_editor" type="Node2D"]
+
+[node name="level" type="Node2D" parent="."]
+
+[node name="editor_object" type="Node2D" parent="."]
+script = ExtResource("1_gtmtg")
+
+[node name="Sprite" type="Sprite2D" parent="editor_object"]
+
+[node name="item_select" parent="." instance=ExtResource("2_xyd57")]
+offset_left = 538.0
+offset_right = 578.0
