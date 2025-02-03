@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://hmtdx7d7sg8e"]
 
-[ext_resource type="Script" path="res://src/Scripts/rising_bubbles.gd" id="1_sr67a"]
+[ext_resource type="Script" path="res://src/scripts/rising_bubbles.gd" id="1_sr67a"]
 [ext_resource type="Texture2D" uid="uid://dv3vbigmnq26g" path="res://assets/oceanbackground.jpg" id="2_pxjyn"]
 
 [node name="Node2D" type="Node2D"]

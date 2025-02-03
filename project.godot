@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="GameJam2025"
-run/main_scene="res://src/scenes/level editor/main/level_editor.tscn"
+run/main_scene="res://level editor/main/level_editor.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
 [autoload]
 
-Global="*res://src/Scripts/global.gd"
-LevelEditGlobal="*res://src/scenes/level editor/scripts/level_edit_global.gd"
+Global="*res://src/scripts/global.gd"
+LevelEditGlobal="*res://level editor/scripts/level_edit_global.gd"
 
 [display]
 

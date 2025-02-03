@@ -23,31 +23,33 @@ var in_motion:bool = false
 @export var num_moves:int = 0
 @export var GRID_SIZE:int = 7
 
+var level:Level = null : set = set_level
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	grid.columns = GRID_SIZE
+	level = Global.level
+	
+func set_level(new_level:Level):
+	level = new_level
+	grid.columns = level.grid_size
 	populate_grid()
 	center_grid()
 	call_deferred("update_counters")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 	
 func populate_grid() -> void: 
 	game_grid = []
-	for i in range(GRID_SIZE): 
+	for i in range(level.grid_size): 
 		game_grid.append([])
-		for j in range(GRID_SIZE):
+		for j in range(level.grid_size):
 			game_grid[i].append(create_cell(Vector2i(i, j)))
 	
-	call_deferred("populate_objects", init_bubble, INIT_BUBBLE_POSITIONS, bubbles)
-	call_deferred("populate_objects", init_block, INIT_BLOCK_POSITIONS, blocks)
-	call_deferred("populate_objects", init_spike, INIT_SPIKE_POSITIONS, spikes)
+	call_deferred("populate_objects", init_bubble, level.bubble_positions, bubbles)
+	call_deferred("populate_objects", init_block, level.block_positions, blocks)
+	call_deferred("populate_objects", init_spike, level.spike_positions, spikes)
 
 func populate_objects(initializer, position_array, append_array) -> void: 
 	for pos in position_array: 
-		if pos.x >= GRID_SIZE or pos.y >= GRID_SIZE or pos.x < 0 or pos.y <0: 
+		if pos.x >= level.grid_size or pos.y >= level.grid_size or pos.x < 0 or pos.y <0: 
 			print_debug("An objects position is out of range")
 			get_tree().quit()
 		
@@ -111,33 +113,33 @@ func rotate_grid(dir:String):
 	
 func rotate_grid_array(left:bool): 
 	var new_array = Array()
-	for i in range(GRID_SIZE): 
+	for i in range(level.grid_size): 
 		var sub_array:Array[Button] = []
-		sub_array.resize(GRID_SIZE)
+		sub_array.resize(level.grid_size)
 		new_array.append(sub_array)
-	for i in range(GRID_SIZE): for j in range(GRID_SIZE): 
+	for i in range(level.grid_size): for j in range(level.grid_size): 
 		if left: 
-			new_array[i][j] = game_grid[j][GRID_SIZE - i - 1]
+			new_array[i][j] = game_grid[j][level.grid_size - i - 1]
 		else: 
-			new_array[i][j] = game_grid[GRID_SIZE - j - 1][i]
+			new_array[i][j] = game_grid[level.grid_size - j - 1][i]
 	game_grid = new_array
 	
 #	TODO: This can be a function easily, total waste of space 
 	for bubble in bubbles: 
 		if left: 
-			bubble.grid_pos = Vector2i(GRID_SIZE - bubble.grid_pos.y - 1, bubble.grid_pos.x)
+			bubble.grid_pos = Vector2i(level.grid_size - bubble.grid_pos.y - 1, bubble.grid_pos.x)
 		else: 
-			bubble.grid_pos = Vector2i(bubble.grid_pos.y, GRID_SIZE - bubble.grid_pos.x - 1)
+			bubble.grid_pos = Vector2i(bubble.grid_pos.y, level.grid_size - bubble.grid_pos.x - 1)
 	for block in blocks: 
 		if left: 
-			block.grid_pos = Vector2i(GRID_SIZE - block.grid_pos.y - 1, block.grid_pos.x)
+			block.grid_pos = Vector2i(level.grid_size - block.grid_pos.y - 1, block.grid_pos.x)
 		else: 
-			block.grid_pos = Vector2i(block.grid_pos.y, GRID_SIZE - block.grid_pos.x - 1)
+			block.grid_pos = Vector2i(block.grid_pos.y, level.grid_size - block.grid_pos.x - 1)
 	for spike in spikes: 
 		if left: 
-			spike.grid_pos = Vector2i(GRID_SIZE - spike.grid_pos.y - 1, spike.grid_pos.x)
+			spike.grid_pos = Vector2i(level.grid_size - spike.grid_pos.y - 1, spike.grid_pos.x)
 		else: 
-			spike.grid_pos = Vector2i(spike.grid_pos.y, GRID_SIZE - spike.grid_pos.x - 1)
+			spike.grid_pos = Vector2i(spike.grid_pos.y, level.grid_size - spike.grid_pos.x - 1)
 	
 func grid_rotation_finished(): 
 	if len(bubbles) == 0: end_turn()
@@ -168,12 +170,12 @@ func delete_bubble(bubble):
 	
 func end_turn(): 
 	in_motion = false
-	num_moves -= 1
+	level.num_moves -= 1
 	if len(bubbles) <= 0 and not bubble_pops:
 		Global.level_completed_bools[Global.active_level] = true #TODO: A bit flawed, assumes no interference since level initiated 
 		Global.active_level = min(Global.active_level+1, Global.num_levels-1)
 		get_tree().change_scene_to_file("res://src/scenes/win_ui.tscn")
-	elif num_moves <= 0 or bubble_pops:
+	elif level.num_moves <= 0 or bubble_pops:
 		get_tree().change_scene_to_file("res://src/scenes/loss_ui.tscn")
 	update_counters()
 	
@@ -195,6 +197,6 @@ func find_bubble_new_pos(bubble_pos:Vector2i) -> Vector2i:
 	return Vector2i(closest_block+1, bubble_pos.y)
 	
 func update_counters() -> void: 
-	move_counter.text = str(num_moves)
+	move_counter.text = str(level.num_moves)
 	bubble_counter.text = str(len(bubbles))
 	

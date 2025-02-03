@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://i7yh16a3no5k"]
 
-[ext_resource type="PackedScene" uid="uid://buy5xm5ce78w0" path="res://src/scenes/level editor/items/item_texture.tscn" id="1_ketbe"]
+[ext_resource type="PackedScene" uid="uid://buy5xm5ce78w0" path="res://level editor/items/item_texture.tscn" id="1_ketbe"]
 [ext_resource type="Texture2D" uid="uid://5ujvqnhcklj4" path="res://assets/stone.png" id="2_g1p6q"]
-[ext_resource type="PackedScene" uid="uid://bsm6bl3qbodln" path="res://src/scenes/level editor/entities/block.tscn" id="3_tqrb2"]
+[ext_resource type="PackedScene" uid="uid://bsm6bl3qbodln" path="res://level editor/entities/block.tscn" id="3_tqrb2"]
 
 [node name="item_block" instance=ExtResource("1_ketbe")]
 texture = ExtResource("2_g1p6q")

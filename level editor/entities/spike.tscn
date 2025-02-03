@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dn5kvx62b32rk"]
 
-[ext_resource type="PackedScene" uid="uid://c8qy5mmx70jpw" path="res://src/scenes/level editor/entities/entity.tscn" id="1_jt6mq"]
+[ext_resource type="PackedScene" uid="uid://c8qy5mmx70jpw" path="res://level editor/entities/entity.tscn" id="1_jt6mq"]
 [ext_resource type="Texture2D" uid="uid://boulbekk6t1xb" path="res://assets/mine.png" id="2_r5svc"]
 
 [node name="spike" instance=ExtResource("1_jt6mq")]

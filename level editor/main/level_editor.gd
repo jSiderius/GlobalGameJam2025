@@ -7,7 +7,9 @@ var game_grid = []
 const grid_button_theme = preload("res://assets/Themes/grid_button.tres")
 
 func _ready() -> void:
-	set_grid(5)
+	#set_grid(5)
+	#Global.save_level()
+	Global.open_level(0)
 	
 func set_grid(grid_size:int): 
 	empty_grid()

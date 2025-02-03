@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dv3vbigmnq26g" path="res://assets/oceanbackground.jpg" id="1_xyt6y"]
 [ext_resource type="Theme" uid="uid://cgaj54vt0lrks" path="res://assets/Themes/menu_buttons_theme.tres" id="2_hthre"]
-[ext_resource type="Script" path="res://src/Scripts/scene_switch_button.gd" id="3_2riij"]
+[ext_resource type="Script" path="res://src/scripts/scene_switch_button.gd" id="3_2riij"]
 [ext_resource type="PackedScene" uid="uid://hmtdx7d7sg8e" path="res://src/scenes/rising_bubbles.tscn" id="4_io8gd"]
 
 [node name="MenuUI" type="Control"]
